@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+#input as number of values in array
+
+n=int(input())
+
+#values which are in array
+l = [int(x) for x in input().split(' ')]
+
+#to calculate average of array
+sum_l=sum(l)
+print(sum_l/n)
+#to get medium
+l=sorted(l)
+if(n%2==0):
+    median_l=(l[(n//2)-1]+l[n//2])/2
+else:
+    median_l=l[n//2]
+
+print(median_l)
+
+from scipy import stats
+print(round(stats.mode(l)[0][0],1))
+
+
