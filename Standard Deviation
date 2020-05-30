@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+array = [int(x) for x in input().split()]
+
+total=0
+
+for val in array:
+    total += val
+#find average of the array
+average = total/n
+#subtract average value from array
+sub_mean_array = [x-average for x in array]
+#square each value in array
+square_array = [x**2 for x in sub_mean_array]
+
+total=0
+for val in square_array:
+    total += val
+
+final_sum = (total/n)**(0.5)
+
+print(round(final_sum,1))
+
+
+
+
