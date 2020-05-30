@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+array = [int(x) for x in input().split()]
+weight = [int(x) for x in input().split()]
+total=0.0
+weig=0
+for v,w in zip(array,weight):
+    total += v*w
+    weig += w
+
+print(round(total/weig,1))
