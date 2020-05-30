@@ -1,0 +1,41 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+array = [int(x) for x in input().split(' ')]
+repititon = [int(x) for x in input().split(' ')]
+
+arr=[]
+#create array by repeating the array value multiple times
+for i in range(n):
+    val = [array[i]]
+    rep = repititon[i]
+    arr += val*rep
+
+l = sorted(arr)
+n=len(arr)
+q_1=0
+q_2=0
+q_3=0
+#check whether array length is even or odd
+if(n%2==0):
+    m = n//2
+    #check whether middle term is even or odd as IOQ is also dependent on that
+    if(m%2!=0):
+        q_1 = l[m//2]
+        q_2 = (l[m]+l[m-1])/2
+        q_3 = l[m+(m//2)]
+    else:
+        q_1=(l[m//2]+l[(m//2)-1])/2
+        q_2 = (l[m]+l[m-1])/2
+        q_3=(l[m+(m//2)]+l[m+(m//2)-1])/2
+else:
+    m=n//2
+    if(m%2!=0):
+        q_1=l[m//2]
+        q_2=l[m]
+        q_3=l[m+(m//2)+1]
+    else:
+        q_1 = (l[m//2]+l[(m//2)-1])/2
+        q_2 = (l[m]+l[m-1])/2
+        q_3 = (l[m+(m//2)]+l[m+(m//2)+1])/2
+
+print(float(q_3-q_1))
