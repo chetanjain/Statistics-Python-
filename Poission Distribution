@@ -1,0 +1,8 @@
+#A random variable, , follows Poisson distribution with mean of . Find the probability with which the random variable  is equal to .
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+mean = float(input().strip())
+X = float(input().strip())
+
+val = round((math.exp(-mean)*(mean**X))/math.factorial(X),3)
+print(val)
