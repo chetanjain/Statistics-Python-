@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to 
+# Please see https://www.hackerrank.com/challenges/s10-normal-distribution-1/tutorial
+import math
+mean,sd = [float(x) for x in input().strip().split(' ')]
+ques1 =  float(input().strip())
+ques2a,ques2b = [float(x) for x in input().strip().split(' ')]
+
+def normal_dist(x):
+    two = 2**(0.5)
+    X = (x-mean)/sd/two
+    erf = math.erf(X)
+    dist = (1+erf)/2
+    return dist
+
+q1 = normal_dist(ques1)
+print(round(q1,3))
+q2a = normal_dist(ques2a)
+q2b = normal_dist(ques2b)
+q2=q2b-q2a
+print(round(q2,3))
+
+
+
+
